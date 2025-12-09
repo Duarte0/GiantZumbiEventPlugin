@@ -26,27 +26,27 @@ public class Main extends JavaPlugin {
         registrarComandos();
         registrarListeners();
 
-        getLogger().info("✅ EventoZumbi ativado com sucesso!");
+        getLogger().info(" EventoZumbi ativado com sucesso!");
     }
 
     private void salvarConfiguracaoPadrao() {
         saveDefaultConfig();
-        getLogger().info("📁 Configuração padrão carregada.");
+        getLogger().info(" Configuração padrão carregada.");
     }
 
     private void inicializarManager() {
         manager = new EventoZumbiManager(this);
-        getLogger().info("👨‍💼 Manager inicializado.");
+        getLogger().info(" Manager inicializado.");
     }
 
     private void registrarComandos() {
         getCommand("eventozumbi").setExecutor(new EventoZumbiCommand(manager, this));
-        getLogger().info("⌨️ Comandos registrados.");
+        getLogger().info(" Comandos registrados.");
     }
 
     private void registrarListeners() {
         getServer().getPluginManager().registerEvents(new EventoZumbiListeners(manager), this);
-        getLogger().info("👂 Listeners registrados.");
+        getLogger().info(" Listeners registrados.");
     }
 
     // ==================== MÉTODOS DE FINALIZAÇÃO ====================
@@ -55,14 +55,14 @@ public class Main extends JavaPlugin {
         if (manager != null) {
             finalizarEventoAtivo();
         }
-        getLogger().info("🛑 EventoZumbi desativado.");
+        getLogger().info(" EventoZumbi desativado.");
     }
 
     private void finalizarEventoAtivo() {
         try {
             manager.finalizarEvento(false, "&c[EVENTO] &ePlugin desativado. Evento cancelado.");
         } catch (Exception e) {
-            getLogger().warning("⚠️ Erro ao finalizar evento: " + e.getMessage());
+            getLogger().warning(" Erro ao finalizar evento: " + e.getMessage());
         }
     }
 
