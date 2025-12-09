@@ -255,7 +255,7 @@ public class EventoZumbiManager {
 
     private void mostrarRanking(List<Map.Entry<UUID, Double>> ranking) {
         broadcastMensagem("&a════════════════════════════");
-        broadcastMensagem("&6🏆 &e&lRANKING DO EVENTO &6🏆");
+        broadcastMensagem("&6 &e&lRANKING DO EVENTO &6");
         broadcastMensagem("&a════════════════════════════");
 
         String[] icones = {"🥇", "🥈", "🥉"};
@@ -308,7 +308,7 @@ public class EventoZumbiManager {
 
                 if (material != null) {
                     player.getInventory().addItem(new ItemStack(material, quantidade));
-                    enviarMensagemDireta(player, "&a🎁 &fVocê recebeu: &e" + quantidade + "x " + material.name());
+                    enviarMensagemDireta(player, "&a &fVocê recebeu: &e" + quantidade + "x " + material.name());
                 }
             } catch (Exception ignored) {}
         }

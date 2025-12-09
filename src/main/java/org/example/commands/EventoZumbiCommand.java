@@ -64,7 +64,7 @@ public class EventoZumbiCommand implements CommandExecutor {
         manager.iniciarInscricoes();
         int tempo = plugin.getConfig().getInt("tempo-entrada", 60);
 
-        sender.sendMessage(color("&a✅ Inscrições abertas! Tempo: " + tempo + "s"));
+        sender.sendMessage(color("&a Inscrições abertas! Tempo: " + tempo + "s"));
         return true;
     }
 
@@ -94,7 +94,7 @@ public class EventoZumbiCommand implements CommandExecutor {
         plugin.getConfig().set("arena.pitch", loc.getPitch());
         plugin.saveConfig();
 
-        sender.sendMessage(color("&a✅ Arena definida com sucesso!"));
+        sender.sendMessage(color("&a Arena definida com sucesso!"));
         return true;
     }
 
@@ -104,7 +104,7 @@ public class EventoZumbiCommand implements CommandExecutor {
         }
 
         plugin.reloadConfig();
-        sender.sendMessage(color("&a✅ Configuração recarregada!"));
+        sender.sendMessage(color("&a Configuração recarregada!"));
         return true;
     }
 
@@ -136,11 +136,11 @@ public class EventoZumbiCommand implements CommandExecutor {
         switch (acao) {
             case "on":
                 manager.setPvpPermitido(true);
-                sender.sendMessage(color("&a✅ PvP ativado para o próximo evento!"));
+                sender.sendMessage(color("&a PvP ativado para o próximo evento!"));
                 break;
             case "off":
                 manager.setPvpPermitido(false);
-                sender.sendMessage(color("&c✅ PvP desativado para o próximo evento!"));
+                sender.sendMessage(color("&c PvP desativado para o próximo evento!"));
                 break;
             case "status":
                 enviarStatusPvp(sender);
@@ -208,7 +208,7 @@ public class EventoZumbiCommand implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage(color("&c❌ Você não tem permissão para isso."));
+        sender.sendMessage(color("&c Você não tem permissão para isso."));
         return false;
     }
 
@@ -217,7 +217,7 @@ public class EventoZumbiCommand implements CommandExecutor {
             return true;
         }
 
-        sender.sendMessage(color("&c❌ Apenas jogadores podem usar este comando."));
+        sender.sendMessage(color("&c Apenas jogadores podem usar este comando."));
         return false;
     }
 }
