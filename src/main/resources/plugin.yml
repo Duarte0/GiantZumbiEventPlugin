@@ -1,0 +1,10 @@
+name: EventoZumbi
+version: 1.0
+main: org.example.Main
+
+commands:
+  eventozumbi:
+    description: Comando do evento zumbi
+    usage: /eventozumbi
+    aliases: [ez, zumbi]
+

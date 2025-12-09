@@ -1,0 +1,43 @@
+# Evento Zumbi - config para Minecraft 1.8.8
+
+# Tempo (em segundos) para entrada no evento
+tempo-entrada: 60
+
+# Arena: mundo e coordenadas (padrão: world)
+arena:
+  mundo: "world"
+  x: 100.0
+  y: 70.0
+  z: 100.0
+  yaw: 0.0
+  pitch: 0.0
+
+boss:
+  nome: "&cZumbi Gigante"
+  vida: 500.0
+  dano: 12.0
+  alcance-ataque: 3.0   # blocos de alcance para atacar players
+  ataque-intervalo: 40  # ticks entre ataques (20 ticks = 1s) -> 40 = 2s
+  drop-customizado: true
+  # Use nomes de Material válidos em 1.8: DIAMOND, GOLD_INGOT, IRON_INGOT, EMERALD, etc.
+  drops:
+    - "DIAMOND:5"
+    - "GOLD_INGOT:3"
+
+mensagens:
+  evento-iniciado: "&a[EVENTO] &fO evento de Zumbi Gigante começou!"
+  como-entrar: "&eUse &6/eventozumbi entrar &epara participar! Tempo: %tempo%s."
+  entrou: "&aVocê entrou no evento! Aguarde começar."
+  ja-esta: "&eVocê já está dentro do evento."
+  morto-no-evento: "&cVocê já morreu nesse evento e não pode voltar."
+  sem-evento: "&cNão há evento ativo no momento."
+  teleportando: "&eTeleportando todos os participantes..."
+  boss-apareceu: "&c[EVENTO] O Zumbi Gigante apareceu!"
+  boss-morto: "&a[EVENTO] O Zumbi Gigante foi derrotado!"
+  cancelado-sem-jogadores: "&c[EVENTO] Evento cancelado: nenhum jogador entrou."
+  todos-morreram: "&c[EVENTO] Todos os jogadores morreram! Evento encerrado."
+  evento-finalizado: "&e[EVENTO] O evento terminou."
+  jogador-morreu: "&cVocê morreu no evento e não pode retornar."
+
+habilitar-som-aparicao-boss: true
+som-boss: "WITHER_SPAWN" # sons em 1.8 (nome enum Sound)
