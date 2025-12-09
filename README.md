@@ -1,14 +1,14 @@
-# 🎮 EventoZumbi - Plugin para Minecraft
+#  EventoZumbi - Plugin para Minecraft
 
-## 📋 Descrição
+##  Descrição
 Plugin de evento de zumbi gigante para Minecraft 1.8.8 com sistema de ranking, PvP controlado e prêmios personalizados.
 
-## 🚀 Instalação
+##  Instalação
 1. Coloque `EventoZumbi.jar` na pasta `plugins/` do seu servidor
 2. Reinicie o servidor
 3. Configure a arena com `/eventozumbi setarena`
 
-## 🎯 Comandos
+##  Comandos
 
 ### Administradores
 - `/eventozumbi start` - Inicia evento
@@ -21,7 +21,7 @@ Plugin de evento de zumbi gigante para Minecraft 1.8.8 com sistema de ranking, P
 - `/eventozumbi status` - Ver status
 - `/eventozumbi ranking` - Ver ranking
 
-## ⚙️ Configuração
+##  Configuração
 Edite `plugins/EventoZumbi/config.yml` para personalizar:
 - Tempo do evento
 - Vida e dano do boss
@@ -29,5 +29,6 @@ Edite `plugins/EventoZumbi/config.yml` para personalizar:
 - Mensagens
 
 ## 📞 Suporte
-- GitHub: []
+- GitHub: [https://github.com/Duarte0/GiantZumbiEventPlugin.git]
 - Discord: [M4ozinh4]
+
