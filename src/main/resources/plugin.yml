@@ -1,10 +1,15 @@
 name: EventoZumbi
 version: 1.0
 main: org.example.Main
+author: Guilherme Duarte
+
+permissions:
+  eventozumbi.admin:
+    description: Permissão para comandos admin do evento
+    default: op
 
 commands:
   eventozumbi:
     description: Comando do evento zumbi
     usage: /eventozumbi
     aliases: [ez, zumbi]
-

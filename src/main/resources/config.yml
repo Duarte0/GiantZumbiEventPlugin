@@ -1,43 +1,123 @@
-# Evento Zumbi - config para Minecraft 1.8.8
+# ============================================
+#          EVENTO ZUMBI - CONFIGURAÇÃO
+#           Minecraft 1.8.8 | v1.0
+# ============================================
+# RECARREGUE APÓS EDITAR: /eventozumbi reload
+# ============================================
 
-# Tempo (em segundos) para entrada no evento
-tempo-entrada: 60
+# ========================
+# CONFIGURAÇÕES DO EVENTO
+# ========================
+tempo-entrada: 60  # Tempo em segundos para os jogadores entrarem
 
-# Arena: mundo e coordenadas (padrão: world)
+evento:
+  tempo-maximo: 600      # Tempo máximo do evento em segundos (10 minutos)
+  pvp-habilitado: false  # Permitir PvP entre jogadores? (true/false)
+
+  # ──── PONTUAÇÃO/RANKING ────
+  ranking-habilitado: true
+  premios-ranking:
+    primeiro: "DIAMOND_BLOCK:1, GOLD_BLOCK:2, EMERALD:10"
+    segundo: "GOLD_BLOCK:1, DIAMOND:5, EMERALD:5"
+    terceiro: "DIAMOND:3, GOLD_INGOT:10, EMERALD:3"
+    participantes: "GOLD_INGOT:3, IRON_INGOT:5"  # Todos que participaram
+
+
+# ========================
+# CONFIGURAÇÕES DA ARENA
+# ========================
 arena:
-  mundo: "world"
-  x: 100.0
-  y: 70.0
-  z: 100.0
-  yaw: 0.0
-  pitch: 0.0
+  mundo: "world"   # Nome do mundo (world, world_nether, etc.)
+  x: 100.0         # Coordenada X
+  y: 70.0          # Coordenada Y (altura)
+  z: 100.0         # Coordenada Z
+  yaw: 0.0         # Direção horizontal (0 = sul, 90 = oeste, 180 = norte, 270 = leste)
+  pitch: 0.0       # Inclinação vertical (-90 = cima, 90 = baixo)
 
+
+# ========================
+# CONFIGURAÇÕES DO BOSS
+# ========================
 boss:
+  # ──── APARÊNCIA ────
   nome: "&cZumbi Gigante"
-  vida: 500.0
-  dano: 12.0
-  alcance-ataque: 3.0   # blocos de alcance para atacar players
-  ataque-intervalo: 40  # ticks entre ataques (20 ticks = 1s) -> 40 = 2s
-  drop-customizado: true
-  # Use nomes de Material válidos em 1.8: DIAMOND, GOLD_INGOT, IRON_INGOT, EMERALD, etc.
-  drops:
-    - "DIAMOND:5"
-    - "GOLD_INGOT:3"
+  vida: 500.0  # Vida total (meios corações)
 
+  # ──── ATAQUES ────
+  dano: 12.0               # Dano por ataque (meios corações)
+  alcance-ataque: 3.0      # Alcance em blocos
+  ataque-intervalo: 40     # Ticks entre ataques (20 ticks = 1 segundo)
+
+  ranking-dano: true  # Registrar dano dos jogadores?
+
+  # ──── RECOMPENSAS ────
+  drop-customizado: true   # Ativar drops personalizados?
+
+  # FORMATO: "MATERIAL:QUANTIDADE"
+  # Materiais válidos 1.8.8: DIAMOND, GOLD_INGOT, IRON_INGOT, EMERALD, etc.
+  drops:
+    - "DIAMOND:5"         # 5 Diamantes
+    - "GOLD_INGOT:3"      # 3 Barras de Ouro
+    - "EMERALD:2"         # 2 Esmeraldas (opcional)
+
+
+# ========================
+# EFEITOS SONOROS
+# ========================
+habilitar-som-aparicao-boss: true
+
+# Sons disponíveis em 1.8.8:
+# - WITHER_SPAWN, ENDERDRAGON_GROWL, EXPLODE
+# - ANVIL_LAND, LEVEL_UP, ORB_PICKUP
+# - GHAST_SCREAM, BLAZE_DEATH
+som-boss: "WITHER_SPAWN"
+
+
+# ========================
+# MENSAGENS DO PLUGIN
+# ========================
 mensagens:
+  # ──── INÍCIO DO EVENTO ────
   evento-iniciado: "&a[EVENTO] &fO evento de Zumbi Gigante começou!"
   como-entrar: "&eUse &6/eventozumbi entrar &epara participar! Tempo: %tempo%s."
-  entrou: "&aVocê entrou no evento! Aguarde começar."
-  ja-esta: "&eVocê já está dentro do evento."
-  morto-no-evento: "&cVocê já morreu nesse evento e não pode voltar."
-  sem-evento: "&cNão há evento ativo no momento."
-  teleportando: "&eTeleportando todos os participantes..."
-  boss-apareceu: "&c[EVENTO] O Zumbi Gigante apareceu!"
-  boss-morto: "&a[EVENTO] O Zumbi Gigante foi derrotado!"
-  cancelado-sem-jogadores: "&c[EVENTO] Evento cancelado: nenhum jogador entrou."
-  todos-morreram: "&c[EVENTO] Todos os jogadores morreram! Evento encerrado."
-  evento-finalizado: "&e[EVENTO] O evento terminou."
-  jogador-morreu: "&cVocê morreu no evento e não pode retornar."
 
-habilitar-som-aparicao-boss: true
-som-boss: "WITHER_SPAWN" # sons em 1.8 (nome enum Sound)
+  # ──── PARTICIPAÇÃO ────
+  entrou: "&a✅ Você entrou no evento! Aguarde começar."
+  ja-esta: "&e⚠ Você já está dentro do evento."
+  morto-no-evento: "&c💀 Você já morreu nesse evento e não pode voltar."
+  sem-evento: "&c❌ Não há evento ativo no momento."
+
+  # ──── TELEPORTE ────
+  teleportando: "&e✨ Teleportando todos os participantes..."
+
+  # ──── BOSS ────
+  boss-apareceu: "&c👹 [EVENTO] O Zumbi Gigante apareceu!"
+  boss-morto: "&a🎉 [EVENTO] O Zumbi Gigante foi derrotado!"
+
+  # ──── FINALIZAÇÃO ────
+  cancelado-sem-jogadores: "&c📛 [EVENTO] Cancelado: nenhum jogador entrou."
+  todos-morreram: "&c☠ [EVENTO] Todos os jogadores morreram! Evento encerrado."
+  evento-finalizado: "&e🏁 [EVENTO] O evento terminou."
+  jogador-morreu: "&c💀 Você morreu no evento e não pode retornar."
+
+
+# ========================
+# PERMISSÕES
+# ========================
+# Permissões disponíveis:
+# - eventozumbi.admin (para comandos de administrador)
+# - Nenhuma (para comando 'entrar' e 'status')
+
+
+# ========================
+# AJUDA RÁPIDA
+# ========================
+# COMANDOS DISPONÍVEIS:
+# /eventozumbi start     - Inicia inscrições (admin)
+# /eventozumbi entrar    - Entra no evento
+# /eventozumbi setarena  - Define arena atual (admin)
+# /eventozumbi status    - Mostra status do evento
+# /eventozumbi reload    - Recarrega configuração (admin)
+#
+# ALIAS: /ez, /zumbi
+# ============================================
